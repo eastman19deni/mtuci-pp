@@ -1,71 +1,45 @@
-import './App.css'
-import mtuci from './images/mtuci.jpg'
-import back from './images/back.jpeg'
-import './AdaptiveImage.css'
+/*import './App.css'
+import MediaQueryImage from './components/MediaQueryImage';
+import Tabs from './components/Tabs';
 
 function App() {
-
-
-interface AdaptiveImageProps {
-  src: string;
-  alt: string;
-  mobileSrc?: string;
-  tabletSrc?: string;
-}
-
-const AdaptiveImage: React.FC<AdaptiveImageProps> = ({ 
-  src, 
-  alt, 
-  mobileSrc, 
-  tabletSrc 
-}) => {
-  return (
-    <picture>
-      {/* Мобильные устройства */}
-      {mobileSrc && (
-        <source 
-          media="(max-width: 768px)" 
-          srcSet={mobileSrc} 
-        />
-      )}
-      
-      {/* Планшеты */}
-      {tabletSrc && (
-        <source 
-          media="(max-width: 1024px)" 
-          srcSet={tabletSrc} 
-        />
-      )}
-      
-      {/* Десктоп и fallback */}
-      <img 
-        src={src} 
-        alt={alt}
-        className="adaptive-img"
-      />
-    </picture>
-  );
-};
-
 
   return (
     <>
       <header className="header">
-        <div className="logo"><img src={mtuci} alt="mtuci" /></div>
+        <div className="logo"><img src="/images/mtuci.jpg "alt="mtuci" /></div>
         <nav className="nav">
-          <a href="#home" className="nav-link">HOME</a>
-          <a href="#about" className="nav-link">ABOUT</a>
-          <a href="#contacts" className="nav-link">CONTACTS</a>
+          <Tabs />
         </nav>
         <div className="login"><a href="#login" className='link-login'>Login</a></div>
       </header>
 
-      <main className="main-content">
-        <div className="back">{AdaptiveImage}</div>
-        <div className="college-info"></div>
+      <main>
+       <MediaQueryImage /> 
       </main>
     </>
   )
 }
 
 export default App
+*/
+// src/App.tsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import './App.css';
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
