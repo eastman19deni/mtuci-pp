@@ -1,0 +1,18 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, 
+[role="button"],
+a {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+/* Для accessibility можно добавить фокус только для клавиатуры */
+button:focus-visible,
+[role="button"]:focus-visible,
+a:focus-visible {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
