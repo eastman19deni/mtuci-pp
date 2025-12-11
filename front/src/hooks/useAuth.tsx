@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import type { LoginData, User } from '../services/api';
-import { authAPI, userAPI } from '../services/api';
+import type { LoginData, User } from '../pages/services/api';
+import { authAPI, userAPI } from '../pages/services/api';
 
 interface UseAuthReturn {
   user: User | null;
